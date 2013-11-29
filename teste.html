@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Test AngularJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+	<script type="text/javascript" src="imc.js"></script>
+	<link rel="stylesheet" type="text/css" href="base.css">
+</head>
+<body style="width: 790px; margin-left: auto; margin-right: auto;"
+ng-controller="IMCCtrl">
+
+<div style="text-align: center;">
+	<h1>Cálculo do Índice de Massa Corpórea (IMC)</h1>
+</div>
+
+<div style="text-align: center;">
+	<label for="weight">Weight</label>
+	<input id="weight" type="text" ng-model="yourWeight" placeholder="Enter your weight (kg)" ng-change="calcIMC()"/> kg
+	<br />
+	<label for="height">Height</label>
+	<input id="height" type="text" ng-model="yourHeight" placeholder="Enter your height (m)" ng-change="calcIMC()"/> m
+	<br />
+	<h3> Seu IMC é {{ imc | number:2}} </h3>
+	<h4> Seu peso normal deveria ser entre {{ normal.minimo | number:2}} kg e {{ normal.maximo| number:2 }} kg</h4>
+</div>
+
+<div>
+	<table id="tabela-resultado-imc"> 
+		<thead> 
+			<tr> 
+				<td class="td-first-col">Resultado</td> 
+				<td>Situação</td> 
+			</tr> 
+		</thead> 
+		<tbody> 
+			<tr ng-class="{destaque: obesidade[0]}"> 
+				<td class="td-first-col">Abaixo de 17</td> 
+				<td>Muito abaixo do <em>peso</em></td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[1]}"> 
+				<td class="td-first-col">Entre 17 e 18,49</td> 
+				<td>Abaixo do <em>peso</em></td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[2]}"> 
+				<td class="td-first-col">Entre 18,5 e 24,99</td> 
+				<td><em>Peso</em> normal</td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[3]}"> 
+				<td class="td-first-col">Entre 25 e 29,99</td> 
+				<td>Acima do <em>peso</em></td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[4]}"> 
+				<td class="td-first-col">Entre 30 e 34,99</td> 
+				<td><em>Obesidade</em> I</td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[5]}"> 
+				<td class="td-first-col">Entre 35 e 39,99</td> 
+				<td><em>Obesidade</em> II (severa)</td> 
+			</tr> 
+			<tr ng-class="{destaque: obesidade[6]}"> 
+				<td class="td-first-col">Acima de 40</td> 
+				<td><em>Obesidade</em> III (mórbida)</td> 
+			</tr> 
+		</tbody> 
+	</table>
+</div>
+
+
+</body>
+</html>

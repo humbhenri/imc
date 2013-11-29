@@ -1,4 +1,3 @@
-imc
-===
+#Cálculo do índice de massa corpórea
 
-imc
+Exemplo de uso do [AngularJS](http://angularjs.org/)

@@ -1,0 +1,37 @@
+table {
+	width: 572px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1pt solid;
+	border-spacing: 0;
+	display: table;
+	border-collapse: separate;
+	font-family: Arial,tahoma,verdana,sans-serif;
+	border-color: #2c2c2c;
+}
+
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+td, th {
+	display: table-cell;
+	vertical-align: inherit;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+thead tr td {
+	background-color: #ddd;
+	font-weight: bold;
+}
+
+.destaque {
+	background-color: yellow;
+}
